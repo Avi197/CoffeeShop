@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Coffee3.Models.Entities.whatsup>
+
+@{
+    ViewBag.Title = "Tin tuc";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Muc tin tuc</h2>
+
+<table class="table">
+@foreach (var item in Model) {
+    <tr>
+        <td>tin abc</td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nameof)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.descriptions)
+        </td>
+    </tr>
+}
+
+</table>
+<p style="font-size:10px">stuff will be modified in a later date</p>

@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Something Coffee</title>
+    <link href="@Url.Content("~/Content/bootstrap.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+
+    @*@Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")*@
+</head>
+<body>
+    <!--navbar-->
+    <div class="container">
+        <nav id="page-nav" class="sidenav sidenav-item">
+            <ul>
+                <li><a href="@Url.Action("Index","Home",null)"><span class="fas fa-home"></span></a></li>
+                <li><a href="@Url.Action("About","About",null)"><span class="fas fa-info"></span></a></li>
+                <li><a href="@Url.Action("Index","Coffee",null)"><span class="fas fa-coffee"></span></a></li>
+                <li><a href="@Url.Action("Galleries","Galleries",null)"><span class="fas fa-camera-retro"></span></a></li>
+                <li><a href="@Url.Action("Index","whatsups",null)"><span class="fas fa-newspaper"></span></a></li>
+                <li><a href="@Url.Action("Contact","Contact",null)"><span class="fas fa-map-marker-alt"></span></a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="main">
+        @RenderBody()
+        <div id="footer"></div>
+            @*<div id="footer">
+                <table class="footer">
+                    <tr>
+                        <td class="connect" width="250px">(placeholder) Connect</td>
+                        <td class="pages">(placeholder) Pages</td>
+                        <td class="zones" colspan="2">(placeholder) Zones</td>
+                    </tr>
+                    row two
+                    <tr>
+                        <td class="pagelist">
+                            <ul id="pagelist">
+                                <li>(placeholder) pagelist</li>
+                                <li>(placeholder) pagelist</li>
+                            </ul>
+                        </td>
+                        <td class="zonelist1">
+                            <ul id="zonelist1">
+                                <li>(placeholder) zonelist</li>
+                                <li>(placeholder) zonelist</li>
+                            </ul>
+                        </td>
+                        <td class="zonelist2">
+                            <ul id="zonelist2">
+                                <li>(placeholder) zonelist2</li>
+                                <li>(placeholder) zonelist2</li>
+                            </ul>
+                        </td>
+                </table>
+            </div>*@
+        </div>
+        <div style="">
+            <div class="shrbtn" type="reset" data-toggle="collapse" data-target="#social" aria-controls="social" style=""><i class="fas fa-share-alt-square" style="font-size: 50px"></i></div>
+            <div class="collapse socialbtns" id="social">
+                <ul>
+                    <li><a href="#" class="si fab fa-facebook-f" style="padding: 3px;"></a></li>
+                    <li><a href="#" class="si fab fa-twitter" style="padding: 3px;"></a></li>
+                    <li><a href="#" class="si fab fa-google-plus" style="padding: 3px;"></a></li>
+                    <li><a href="#" class="si fab fa-instagram " style="padding: 3px;"></a></li>
+                </ul>
+            </div>
+        </div>
+        <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>

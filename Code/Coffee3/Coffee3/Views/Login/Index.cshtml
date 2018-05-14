@@ -1,0 +1,50 @@
+﻿@model Coffee3.Models.Entities.adminaccount
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Index", "Login", FormMethod.Post))
+{
+    <fieldset>
+        <legend>Login page</legend>
+
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        @if (@ViewBag.Message != null)
+        {
+            <div style="border: 1px solid red">
+                @ViewBag.Message
+            </div>
+        }
+        @using (Html.BeginForm())
+        {
+        <table>
+            <tr>
+                <td>Username</td>
+                <td>@Html.TextBoxFor(a => a.username)</td>
+                <td>@Html.ValidationMessageFor(a => a.username)</td>
+            </tr>
+            <tr>
+                <td>
+                    Password
+                </td>
+                <td>
+                    @Html.PasswordFor(a => a.passwordhash)
+                </td>
+                <td>
+                    @Html.ValidationMessageFor(a => a.passwordhash)
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Login" />
+                </td>
+                <td></td>
+            </tr>
+        </table>
+        }
+    </fieldset>
+}
+

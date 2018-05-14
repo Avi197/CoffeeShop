@@ -1,0 +1,151 @@
+﻿@model IEnumerable<Coffee3.Models.Entities.drink>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<body>
+    <!--banner-->
+    <div class="container-fluid nopadding" style="position: relative; text-align: center;">
+        <img src="~/Content/imgs/bannersmall.jpg" width="100%">
+    </div>
+    <!--products-->
+    <div class="products-page" style="text-align: center">
+        <h3> - Customers' favorite - </h3>
+        <span style="display: block; height: 60px"></span>
+        @*<table class="footer" style="text-align: center">
+                <tr>
+                    <td class="products"><img class="center" src="http://via.placeholder.com/250x250"></td>
+                    <td class="products"><img class="center" src="http://via.placeholder.com/250x250"></td>
+                    <td class="products"><img class="center" src="http://via.placeholder.com/250x250"></td>
+                </tr>
+                <tr>
+                    <td class="products"><img class="center" src="http://via.placeholder.com/250x250"></td>
+                    <td class="products"><img class="center" src="http://via.placeholder.com/250x250"></td>
+                    <td class="products"><img class="center" src="http://via.placeholder.com/250x250"></td>
+                </tr>
+                <tr>
+                    <td class="products"><img class="center" src="http://via.placeholder.com/250x250"></td>
+                    <td class="products"><img class="center" src="http://via.placeholder.com/250x250"></td>
+                    <td class="products"><img class="center" src="http://via.placeholder.com/250x250"></td>
+                </tr>
+            </table>*@
+        <table class="footer" style="text-align: center">
+
+            <tr>
+                @foreach (var item in Model)
+                {
+                    <td>
+                        <table>
+                            <tr>
+                                <td class="products">
+                                    <table>
+                                        <tr><td><img class="center" src="http://via.placeholder.com/250x250"></td></tr>
+                                        <tr><td class="coffee_text">@Html.DisplayFor(modelItem => item.nameof)</td></tr>
+                                    </table>
+                                </td>
+                            </tr>
+
+                        </table>
+                    </td>
+                }
+            </tr>
+        </table>
+        <span style="display: block; height: 60px"></span>
+
+        <h3> - Our best stuff - </h3>
+        <span style="display: block; height: 60px"></span>
+        @{
+            int count = 0;
+            var tr = new HtmlString("<tr>");
+            var trclose = new HtmlString("</tr>");
+            <table class="footer">
+                <tr>
+                    @foreach (var item in Model)
+                    {
+                        <td align="center">
+                            <table>
+                                <tr>
+                                    <td align="center" class="products">
+                                        <table>
+                                            <tr><td align="center"><img class="center" src="http://via.placeholder.com/250x250"></td></tr>
+                                            <tr><td align="center" class="coffee_text">@Html.DisplayFor(modelItem => item.nameof)</td></tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        count++;
+
+                        if (count % 3 == 0)
+                        {
+                            @tr;
+                            @trclose;
+                        }
+
+                    }
+                </tr>
+            </table>
+        }
+        @*<table class="footer" style="text-align: center">
+                <tr>
+                    @foreach (var item in Model)
+                    {
+                        <td>
+                            <table>
+                                <tr>
+                                    <td class="products">
+                                        <table>
+                                            <tr><td><img class="center" src="http://via.placeholder.com/250x250"></td></tr>
+                                            <tr><td class="coffee_text">@Html.DisplayFor(modelItem => item.nameof)</td></tr>
+                                        </table>
+                                    </td>
+                                </tr>
+
+                            </table>
+                        </td>
+                    }
+                </tr>
+            </table>*@
+        <!--<div class="container h-100" style="text-align: center; height: auto;">
+            <div class="row h-100 justify-content-center align-items-center">
+
+                <div class="col-md products nopadding">
+                    <img src="http://via.placeholder.com/250x250">
+                    <div>Products 1</div>
+                </div>
+                <div class="col-md  products nopadding">
+                    <img src="http://via.placeholder.com/250x250">
+                    <div>Products 2</div>
+                </div>
+                <div class="col-md products nopadding">
+                    <div>
+                        <img src="http://via.placeholder.com/250x250">
+                        <div>Products 3</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row h-100 justify-content-center align-items-center">
+                <div class="col-md products nopadding">
+                    <img src="http://via.placeholder.com/250x250">
+                    <div>Products 1</div>
+                </div>
+                <div class="col-md products nopadding">
+                    <img src="http://via.placeholder.com/250x250">
+                    <div>Products 2</div>
+                </div>
+                <div class="col-md products nopadding">
+                    <img src="http://via.placeholder.com/250x250">
+                    <div>Products 3</div>
+                </div>
+
+            </div>
+        </div>-->
+        <span style="display: block; height: 40px"></span>
+    </div>
+    <!--end main-->
+</body>
+
